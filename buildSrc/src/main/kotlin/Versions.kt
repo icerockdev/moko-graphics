@@ -23,7 +23,7 @@ object Versions {
         }
 
         object MultiPlatform {
-            const val mokoGraphics: String = "0.1.0"
+            const val mokoGraphics: String = "0.2.0"
         }
     }
 }
