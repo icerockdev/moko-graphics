@@ -8,6 +8,5 @@ import androidx.annotation.ColorInt
 
 @ColorInt
 fun Color.colorInt(): Int {
-    val maxColorValue: Int = 0xFF
     return argb.toInt()
 }
