@@ -18,10 +18,6 @@ android {
     }
 }
 
-framework {
-    exports = listOf(Deps.Libs.MultiPlatform.mokoGraphics)
-}
-
 dependencies {
-    api(project(":graphics"))
+    commonMainApi(project(":graphics"))
 }
