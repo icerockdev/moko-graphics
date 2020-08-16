@@ -3,10 +3,10 @@
  */
 
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.multiplatform")
-    id("dev.icerock.mobile.multiplatform")
-    id("maven-publish")
+    plugin(Deps.Plugins.androidLibrary)
+    plugin(Deps.Plugins.kotlinMultiPlatform)
+    plugin(Deps.Plugins.mobileMultiPlatform)
+    plugin(Deps.Plugins.mavenPublish)
 }
 
 group = "dev.icerock.moko"
@@ -22,8 +22,6 @@ android {
 }
 
 dependencies {
-    mppLibrary(Deps.Libs.MultiPlatform.kotlinStdLib)
-
     androidLibrary(Deps.Libs.Android.annotation)
 }
 

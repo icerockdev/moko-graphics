@@ -3,8 +3,8 @@
  */
 
 plugins {
-    id("com.android.application")
-    id("kotlin-android")
+    plugin(Deps.Plugins.androidApplication)
+    plugin(Deps.Plugins.kotlinAndroid)
 }
 
 android {
@@ -43,8 +43,6 @@ android {
 }
 
 dependencies {
-    implementation(Deps.Libs.Android.kotlinStdLib.name)
-
     implementation(Deps.Libs.Android.appCompat.name)
 
     implementation(project(":sample:mpp-library"))

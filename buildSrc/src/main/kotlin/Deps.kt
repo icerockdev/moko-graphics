@@ -4,15 +4,21 @@
 
 object Deps {
     object Plugins {
-        const val androidExtensions =
-            "org.jetbrains.kotlin:kotlin-android-extensions:${Versions.Plugins.androidExtensions}"
+        val androidExtensions = GradlePlugin(
+            id = "kotlin-android-extensions",
+            module = "org.jetbrains.kotlin:kotlin-android-extensions:${Versions.Plugins.androidExtensions}"
+        )
+        val androidLibrary = GradlePlugin(id = "com.android.library")
+        val androidApplication = GradlePlugin(id = "com.android.application")
+        val kotlinMultiPlatform = GradlePlugin(id = "org.jetbrains.kotlin.multiplatform")
+        val kotlinAndroid = GradlePlugin(id = "kotlin-android")
+        val mobileMultiPlatform = GradlePlugin(id = "dev.icerock.mobile.multiplatform")
+        val iosFramework = GradlePlugin(id = "dev.icerock.mobile.multiplatform.ios-framework")
+        val mavenPublish = GradlePlugin(id = "maven-publish")
     }
 
     object Libs {
         object Android {
-            val kotlinStdLib = AndroidLibrary(
-                name = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
-            )
             val appCompat = AndroidLibrary(
                 name = "androidx.appcompat:appcompat:${Versions.Libs.Android.appCompat}"
             )
@@ -22,10 +28,6 @@ object Deps {
         }
 
         object MultiPlatform {
-            val kotlinStdLib = MultiPlatformLibrary(
-                android = Android.kotlinStdLib.name,
-                common = "org.jetbrains.kotlin:kotlin-stdlib-common:${Versions.kotlin}"
-            )
             val mokoGraphics = MultiPlatformLibrary(
                 common = "dev.icerock.moko:graphics:${Versions.Libs.MultiPlatform.mokoGraphics}",
                 iosX64 = "dev.icerock.moko:graphics-iosx64:${Versions.Libs.MultiPlatform.mokoGraphics}",
@@ -33,8 +35,4 @@ object Deps {
             )
         }
     }
-
-    val plugins: Map<String, String> = mapOf(
-        "kotlin-android-extensions" to Plugins.androidExtensions
-    )
 }

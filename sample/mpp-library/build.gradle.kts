@@ -3,9 +3,10 @@
  */
 
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.multiplatform")
-    id("dev.icerock.mobile.multiplatform")
+    plugin(Deps.Plugins.androidLibrary)
+    plugin(Deps.Plugins.kotlinMultiPlatform)
+    plugin(Deps.Plugins.mobileMultiPlatform)
+    plugin(Deps.Plugins.iosFramework)
 }
 
 android {
@@ -17,11 +18,10 @@ android {
     }
 }
 
-setupFramework(
+framework {
     exports = listOf(Deps.Libs.MultiPlatform.mokoGraphics)
-)
+}
 
 dependencies {
-    mppLibrary(Deps.Libs.MultiPlatform.kotlinStdLib)
-    mppLibrary(Deps.Libs.MultiPlatform.mokoGraphics)
+    api(project(":graphics"))
 }
