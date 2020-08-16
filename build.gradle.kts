@@ -9,7 +9,7 @@ buildscript {
     }
 
     dependencies {
-        plugins(Deps.Plugins.run { listOf(androidExtensions) })
+        plugin(Deps.Plugins.androidExtensions)
     }
 }
 
