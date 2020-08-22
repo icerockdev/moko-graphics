@@ -19,7 +19,7 @@ This is a Kotlin Multiplatform library that provides graphics primitives to comm
 - **Color** converting according to the platform-side requirements (argb/rgba).
 
 ## Requirements
-- Gradle version 5.6.4+
+- Gradle version 6.0+
 - Android API 16+
 - iOS version 9.0+
 
