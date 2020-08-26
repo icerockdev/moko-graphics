@@ -10,19 +10,10 @@ plugins {
 }
 
 group = "dev.icerock.moko"
-version = Versions.Libs.MultiPlatform.mokoGraphics
-
-android {
-    compileSdkVersion(Versions.Android.compileSdk)
-
-    defaultConfig {
-        minSdkVersion(Versions.Android.minSdk)
-        targetSdkVersion(Versions.Android.targetSdk)
-    }
-}
+version = Deps.mokoGraphicsVersion
 
 dependencies {
-    androidLibrary(Deps.Libs.Android.annotation)
+    androidMainImplementation(Deps.Libs.Android.annotation)
 }
 
 publishing {

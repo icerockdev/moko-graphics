@@ -3,10 +3,23 @@
  */
 
 object Deps {
+    private const val kotlinVersion = "1.4.0"
+
+    private const val androidAppCompatVersion = "1.2.0"
+    private const val androidAnnotationVersion = "1.1.0"
+
+    const val mokoGraphicsVersion = "0.4.0"
+
+    object Android {
+        const val compileSdk = 28
+        const val targetSdk = 28
+        const val minSdk = 16
+    }
+
     object Plugins {
         val androidExtensions = GradlePlugin(
             id = "kotlin-android-extensions",
-            module = "org.jetbrains.kotlin:kotlin-android-extensions:${Versions.Plugins.androidExtensions}"
+            module = "org.jetbrains.kotlin:kotlin-android-extensions:$kotlinVersion"
         )
         val androidLibrary = GradlePlugin(id = "com.android.library")
         val androidApplication = GradlePlugin(id = "com.android.application")
@@ -19,20 +32,15 @@ object Deps {
 
     object Libs {
         object Android {
-            val appCompat = AndroidLibrary(
-                name = "androidx.appcompat:appcompat:${Versions.Libs.Android.appCompat}"
-            )
-            val annotation = AndroidLibrary(
-                name = "androidx.annotation:annotation:${Versions.Libs.Android.annotation}"
-            )
+            const val appCompat =
+                "androidx.appcompat:appcompat:$androidAppCompatVersion"
+            const val annotation =
+                "androidx.annotation:annotation:$androidAnnotationVersion"
         }
 
         object MultiPlatform {
-            val mokoGraphics = MultiPlatformLibrary(
-                common = "dev.icerock.moko:graphics:${Versions.Libs.MultiPlatform.mokoGraphics}",
-                iosX64 = "dev.icerock.moko:graphics-iosx64:${Versions.Libs.MultiPlatform.mokoGraphics}",
-                iosArm64 = "dev.icerock.moko:graphics-iosarm64:${Versions.Libs.MultiPlatform.mokoGraphics}"
-            )
+            const val mokoGraphics =
+                "dev.icerock.moko:graphics:$mokoGraphicsVersion"
         }
     }
 }

@@ -9,15 +9,6 @@ plugins {
     plugin(Deps.Plugins.iosFramework)
 }
 
-android {
-    compileSdkVersion(Versions.Android.compileSdk)
-
-    defaultConfig {
-        minSdkVersion(Versions.Android.minSdk)
-        targetSdkVersion(Versions.Android.targetSdk)
-    }
-}
-
 dependencies {
-    commonMainApi(project(":graphics"))
+    commonMainApi(Deps.Libs.MultiPlatform.mokoGraphics)
 }
