@@ -23,13 +23,6 @@ allprojects {
         maven { url = uri("https://dl.bintray.com/icerockdev/moko") }
     }
 
-    configurations.all {
-        resolutionStrategy.dependencySubstitution {
-            substitute(module(Deps.Libs.MultiPlatform.mokoGraphics))
-                .with(project(":graphics"))
-        }
-    }
-
     plugins.withId(Deps.Plugins.androidLibrary.id) {
         configure<com.android.build.gradle.LibraryExtension> {
             compileSdkVersion(Deps.Android.compileSdk)
