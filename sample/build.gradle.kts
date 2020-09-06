@@ -5,8 +5,13 @@
 subprojects {
     configurations.all {
         resolutionStrategy.dependencySubstitution {
-            substitute(module(Deps.Libs.MultiPlatform.mokoGraphics))
-                .with(project(":graphics"))
+            listOf(
+                Deps.Libs.MultiPlatform.mokoGraphics.common,
+                Deps.Libs.MultiPlatform.mokoGraphics.iosX64!!,
+                Deps.Libs.MultiPlatform.mokoGraphics.iosArm64!!
+            ).forEach {
+                substitute(module(it)).with(project(":graphics"))
+            }
         }
     }
 }

@@ -39,8 +39,11 @@ object Deps {
         }
 
         object MultiPlatform {
-            const val mokoGraphics =
-                "dev.icerock.moko:graphics:$mokoGraphicsVersion"
+            val mokoGraphics = MultiPlatformLibrary(
+                common = "dev.icerock.moko:graphics:$mokoGraphicsVersion",
+                iosX64 = "dev.icerock.moko:graphics-iosx64:$mokoGraphicsVersion",
+                iosArm64 = "dev.icerock.moko:graphics-iosarm64:$mokoGraphicsVersion"
+            )
         }
     }
 }

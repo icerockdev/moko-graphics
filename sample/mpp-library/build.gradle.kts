@@ -10,5 +10,9 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(Deps.Libs.MultiPlatform.mokoGraphics)
+    mppLibrary(Deps.Libs.MultiPlatform.mokoGraphics)
+}
+
+framework {
+    export(Deps.Libs.MultiPlatform.mokoGraphics)
 }
