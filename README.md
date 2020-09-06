@@ -1,5 +1,5 @@
 ![moko-graphics](img/logo.png)  
-[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Download](https://api.bintray.com/packages/icerockdev/moko/moko-graphics/images/download.svg) ](https://bintray.com/icerockdev/moko/moko-graphics/_latestVersion) ![kotlin-version](https://img.shields.io/badge/kotlin-1.3.70-orange)
+[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Download](https://api.bintray.com/packages/icerockdev/moko/moko-graphics/images/download.svg) ](https://bintray.com/icerockdev/moko/moko-graphics/_latestVersion) ![kotlin-version](https://img.shields.io/badge/kotlin-1.4.0-orange)
 
 # Mobile Kotlin graphics
 This is a Kotlin Multiplatform library that provides graphics primitives to common code.  
@@ -11,7 +11,7 @@ This is a Kotlin Multiplatform library that provides graphics primitives to comm
 - [Installation](#installation)
 - [Usage](#usage)
 - [Samples](#samples)
-- [Set Up Locally](#setup-locally)
+- [Set Up Locally](#set-up-locally)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -19,7 +19,7 @@ This is a Kotlin Multiplatform library that provides graphics primitives to comm
 - **Color** converting according to the platform-side requirements (argb/rgba).
 
 ## Requirements
-- Gradle version 5.6.4+
+- Gradle version 6.0+
 - Android API 16+
 - iOS version 9.0+
 
@@ -30,6 +30,8 @@ This is a Kotlin Multiplatform library that provides graphics primitives to comm
   - 0.2.0
 - kotlin 1.3.70
   - 0.3.0
+- kotlin 1.4.0
+  - 0.4.0
 
 ## Installation
 root build.gradle  
@@ -44,7 +46,7 @@ allprojects {
 project build.gradle
 ```groovy
 dependencies {
-    commonMainApi("dev.icerock.moko:graphics:0.3.0")
+    commonMainApi("dev.icerock.moko:graphics:0.4.0")
 }
 ```
 
@@ -68,7 +70,6 @@ Please see more examples in the [sample directory](sample).
 ## Set Up Locally 
 - The [graphics directory](graphics) contains the `graphics` library;
 - The [sample directory](sample) contains sample apps for Android and iOS; plus the mpp-library connected to the apps;
-- For local testing use the `./publishToMavenLocal.sh` script - so that sample apps use the locally published version.
 
 ## Contributing
 All development (both new features and bug fixes) is performed in the `develop` branch. This way `master` always contains the sources of the most recently released version. Please send PRs with bug fixes to the `develop` branch. Documentation fixes in the markdown files are an exception to this rule. They are updated directly in `master`.
