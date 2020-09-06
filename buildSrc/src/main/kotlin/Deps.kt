@@ -3,38 +3,47 @@
  */
 
 object Deps {
+    private const val kotlinVersion = "1.4.0"
+
+    private const val androidAppCompatVersion = "1.2.0"
+    private const val androidAnnotationVersion = "1.1.0"
+
+    const val mokoGraphicsVersion = "0.4.0"
+
+    object Android {
+        const val compileSdk = 28
+        const val targetSdk = 28
+        const val minSdk = 16
+    }
+
     object Plugins {
-        const val androidExtensions =
-            "org.jetbrains.kotlin:kotlin-android-extensions:${Versions.Plugins.androidExtensions}"
+        val androidExtensions = GradlePlugin(
+            id = "kotlin-android-extensions",
+            module = "org.jetbrains.kotlin:kotlin-android-extensions:$kotlinVersion"
+        )
+        val androidLibrary = GradlePlugin(id = "com.android.library")
+        val androidApplication = GradlePlugin(id = "com.android.application")
+        val kotlinMultiPlatform = GradlePlugin(id = "org.jetbrains.kotlin.multiplatform")
+        val kotlinAndroid = GradlePlugin(id = "kotlin-android")
+        val mobileMultiPlatform = GradlePlugin(id = "dev.icerock.mobile.multiplatform")
+        val iosFramework = GradlePlugin(id = "dev.icerock.mobile.multiplatform.ios-framework")
+        val mavenPublish = GradlePlugin(id = "maven-publish")
     }
 
     object Libs {
         object Android {
-            val kotlinStdLib = AndroidLibrary(
-                name = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
-            )
-            val appCompat = AndroidLibrary(
-                name = "androidx.appcompat:appcompat:${Versions.Libs.Android.appCompat}"
-            )
-            val annotation = AndroidLibrary(
-                name = "androidx.annotation:annotation:${Versions.Libs.Android.annotation}"
-            )
+            const val appCompat =
+                "androidx.appcompat:appcompat:$androidAppCompatVersion"
+            const val annotation =
+                "androidx.annotation:annotation:$androidAnnotationVersion"
         }
 
         object MultiPlatform {
-            val kotlinStdLib = MultiPlatformLibrary(
-                android = Android.kotlinStdLib.name,
-                common = "org.jetbrains.kotlin:kotlin-stdlib-common:${Versions.kotlin}"
-            )
             val mokoGraphics = MultiPlatformLibrary(
-                common = "dev.icerock.moko:graphics:${Versions.Libs.MultiPlatform.mokoGraphics}",
-                iosX64 = "dev.icerock.moko:graphics-iosx64:${Versions.Libs.MultiPlatform.mokoGraphics}",
-                iosArm64 = "dev.icerock.moko:graphics-iosarm64:${Versions.Libs.MultiPlatform.mokoGraphics}"
+                common = "dev.icerock.moko:graphics:$mokoGraphicsVersion",
+                iosX64 = "dev.icerock.moko:graphics-iosx64:$mokoGraphicsVersion",
+                iosArm64 = "dev.icerock.moko:graphics-iosarm64:$mokoGraphicsVersion"
             )
         }
     }
-
-    val plugins: Map<String, String> = mapOf(
-        "kotlin-android-extensions" to Plugins.androidExtensions
-    )
 }
