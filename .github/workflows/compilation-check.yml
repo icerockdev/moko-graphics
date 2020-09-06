@@ -17,6 +17,4 @@ jobs:
         with:
           java-version: 1.8
       - name: Check build
-        run: ./gradlew build
-      - name: Check publish
-        run: ./gradlew publishToMavenLocal
+        run: ./gradlew build publishToMavenLocal
