@@ -1,16 +1,12 @@
-/*
- * Copyright 2019 IceRock MAG Inc. Use of this source code is governed by the Apache 2.0 license.
- */
-
 package dev.icerock.moko.graphics
 
-import platform.UIKit.UIColor
+import platform.AppKit.NSColor
 
 @Suppress("unused")
-// Used in iOS targets
-fun Color.toUIColor(): UIColor {
+// Used in macOS targets
+fun Color.toNSColor(): NSColor {
     val maxColorValue = 0xFF
-    return UIColor(
+    return NSColor.colorWithCalibratedRed(
         red = red.toDouble() / maxColorValue,
         green = green.toDouble() / maxColorValue,
         blue = blue.toDouble() / maxColorValue,
