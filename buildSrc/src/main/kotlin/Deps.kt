@@ -8,7 +8,7 @@ object Deps {
     private const val androidAppCompatVersion = "1.2.0"
     private const val androidAnnotationVersion = "1.1.0"
 
-    const val mokoGraphicsVersion = "0.4.0"
+    const val mokoGraphicsVersion = "0.5.0"
 
     object Android {
         const val compileSdk = 28
