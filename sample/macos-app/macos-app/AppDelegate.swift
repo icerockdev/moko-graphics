@@ -36,11 +36,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 }
-
-extension GraphicsColor {
-    func toNSColor() -> NSColor{
-        let maxColorValue = CGFloat(0xFF)
-        return NSColor(red: CGFloat(red) / maxColorValue, green: CGFloat(green) / maxColorValue, blue: CGFloat(blue) / maxColorValue, alpha: CGFloat(alpha) / maxColorValue)
-    }
-}
-
