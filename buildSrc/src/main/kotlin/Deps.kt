@@ -26,7 +26,7 @@ object Deps {
         val kotlinMultiPlatform = GradlePlugin(id = "org.jetbrains.kotlin.multiplatform")
         val kotlinAndroid = GradlePlugin(id = "kotlin-android")
         val mobileMultiPlatform = GradlePlugin(id = "dev.icerock.mobile.multiplatform")
-        val iosFramework = GradlePlugin(id = "dev.icerock.mobile.multiplatform.ios-framework")
+        val appleFramework = GradlePlugin(id = "dev.icerock.mobile.multiplatform.apple-framework")
         val mavenPublish = GradlePlugin(id = "maven-publish")
     }
 
@@ -39,11 +39,8 @@ object Deps {
         }
 
         object MultiPlatform {
-            val mokoGraphics = MultiPlatformLibrary(
-                common = "dev.icerock.moko:graphics:$mokoGraphicsVersion",
-                iosX64 = "dev.icerock.moko:graphics-iosx64:$mokoGraphicsVersion",
-                iosArm64 = "dev.icerock.moko:graphics-iosarm64:$mokoGraphicsVersion"
-            )
+            val mokoGraphics = "dev.icerock.moko:graphics:$mokoGraphicsVersion"
+                .defaultMPL(android = true, ios = true, macos = true)
         }
     }
 }

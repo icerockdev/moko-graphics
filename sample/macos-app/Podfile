@@ -12,7 +12,7 @@ pre_install do |installer|
   # their type (static or dynamic) and configure the Xcode project accordingly.
   # Build MultiPlatformLibrary framework to correct install Pod
   puts "prepare MultiPlatformLibrary.framework (requires some time...)"
-  `cd .. && ./gradlew :sample:mpp-library:copyMultiPlatformLibraryDebugFrameworkMacosX64`
+  `cd .. && ./gradlew :sample:mpp-library:syncMultiPlatformLibraryDebugFrameworkMacosX64`
   puts "preparing MultiPlatformLibrary.framework complete"
 end
 
