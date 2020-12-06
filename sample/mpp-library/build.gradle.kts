@@ -6,11 +6,15 @@ plugins {
     plugin(Deps.Plugins.androidLibrary)
     plugin(Deps.Plugins.kotlinMultiPlatform)
     plugin(Deps.Plugins.mobileMultiPlatform)
-    plugin(Deps.Plugins.iosFramework)
+    plugin(Deps.Plugins.appleFramework)
+}
+
+kotlin {
+    macosX64()
 }
 
 dependencies {
-    mppLibrary(Deps.Libs.MultiPlatform.mokoGraphics)
+    commonMainApi(Deps.Libs.MultiPlatform.mokoGraphics.common)
 }
 
 framework {

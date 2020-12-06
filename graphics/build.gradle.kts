@@ -16,6 +16,10 @@ dependencies {
     androidMainImplementation(Deps.Libs.Android.annotation)
 }
 
+kotlin {
+    macosX64()
+}
+
 publishing {
     repositories.maven("https://api.bintray.com/maven/icerockdev/moko/moko-graphics/;publish=1") {
         name = "bintray"
