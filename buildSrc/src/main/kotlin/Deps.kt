@@ -8,7 +8,7 @@ object Deps {
     private const val androidAppCompatVersion = "1.2.0"
     private const val androidAnnotationVersion = "1.1.0"
 
-    const val mokoGraphicsVersion = "0.5.0"
+    const val mokoGraphicsVersion = "0.6.0"
 
     object Android {
         const val compileSdk = 28
@@ -17,10 +17,6 @@ object Deps {
     }
 
     object Plugins {
-        val androidExtensions = GradlePlugin(
-            id = "kotlin-android-extensions",
-            module = "org.jetbrains.kotlin:kotlin-android-extensions:$kotlinVersion"
-        )
         val androidLibrary = GradlePlugin(id = "com.android.library")
         val androidApplication = GradlePlugin(id = "com.android.application")
         val kotlinMultiPlatform = GradlePlugin(id = "org.jetbrains.kotlin.multiplatform")
