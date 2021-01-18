@@ -1,5 +1,5 @@
 ![moko-graphics](img/logo.png)  
-[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Download](https://api.bintray.com/packages/icerockdev/moko/moko-graphics/images/download.svg) ](https://bintray.com/icerockdev/moko/moko-graphics/_latestVersion) ![kotlin-version](https://img.shields.io/badge/kotlin-1.4.20-orange)
+[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Download](https://api.bintray.com/packages/icerockdev/moko/moko-graphics/images/download.svg) ](https://bintray.com/icerockdev/moko/moko-graphics/_latestVersion) ![kotlin-version](https://img.shields.io/badge/kotlin-1.4.21-orange)
 
 # Mobile Kotlin graphics
 This is a Kotlin Multiplatform library that provides graphics primitives to common code.  
@@ -16,7 +16,8 @@ This is a Kotlin Multiplatform library that provides graphics primitives to comm
 - [License](#license)
 
 ## Features
-- **Color** converting according to the platform-side requirements (argb/rgba).
+- **Color** converting according to the platform-side requirements (argb/rgba);
+- All Kotlin Multiplatform targets support.
 
 ## Requirements
 - Gradle version 6.0+
@@ -34,6 +35,8 @@ This is a Kotlin Multiplatform library that provides graphics primitives to comm
   - 0.4.0
 - kotlin 1.4.20
   - 0.5.0
+- kotlin 1.4.21
+  - 0.6.0
 
 ## Installation
 root build.gradle  
@@ -48,7 +51,7 @@ allprojects {
 project build.gradle
 ```groovy
 dependencies {
-    commonMainApi("dev.icerock.moko:graphics:0.5.0")
+    commonMainApi("dev.icerock.moko:graphics:0.6.0")
 }
 ```
 

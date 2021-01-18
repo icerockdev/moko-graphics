@@ -18,6 +18,29 @@ dependencies {
 
 kotlin {
     macosX64()
+    tvos()
+    watchos()
+    jvm()
+    js {
+        nodejs()
+        browser()
+    }
+    linux()
+    windows()
+    wasm32()
+}
+
+fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.linux() {
+    linuxArm64()
+    linuxArm32Hfp()
+    linuxMips32()
+    linuxMipsel32()
+    linuxX64()
+}
+
+fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.windows() {
+    mingwX64()
+    mingwX86()
 }
 
 publishing {
@@ -29,4 +52,26 @@ publishing {
             password = System.getProperty("BINTRAY_KEY")
         }
     }
+
+    // Make sure to avoid duplicate publications
+    val publicationsFromMainHost = listOf(
+            "wasm32",
+            "jvm",
+            "js",
+            "kotlinMultiplatform",
+            "androidRelease",
+            "androidDebug",
+            "linuxArm64",
+            "linuxArm32Hfp",
+            "linuxX64"
+    )
+
+    publications
+            .matching { it.name in publicationsFromMainHost }
+            .all {
+                val targetPublication = this@all
+                tasks.withType<AbstractPublishToMaven>()
+                        .matching { it.publication == targetPublication }
+                        .all { onlyIf { System.getProperty("IS_MAIN_HOST") == "true" } }
+            }
 }
