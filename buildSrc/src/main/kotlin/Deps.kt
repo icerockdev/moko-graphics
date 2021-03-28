@@ -3,12 +3,12 @@
  */
 
 object Deps {
-    private const val kotlinVersion = "1.4.21"
+    private const val kotlinVersion = "1.4.31"
 
     private const val androidAppCompatVersion = "1.2.0"
     private const val androidAnnotationVersion = "1.1.0"
 
-    const val mokoGraphicsVersion = "0.6.0"
+    const val mokoGraphicsVersion = "0.6.1"
 
     object Android {
         const val compileSdk = 28
@@ -24,6 +24,7 @@ object Deps {
         val mobileMultiPlatform = GradlePlugin(id = "dev.icerock.mobile.multiplatform")
         val appleFramework = GradlePlugin(id = "dev.icerock.mobile.multiplatform.apple-framework")
         val mavenPublish = GradlePlugin(id = "maven-publish")
+        val signing = GradlePlugin(id = "signing")
     }
 
     object Libs {
