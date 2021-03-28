@@ -1,5 +1,5 @@
 ![moko-graphics](img/logo.png)  
-[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Download](https://img.shields.io/maven-central/v/dev.icerock.moko/moko-graphics) ](https://repo1.maven.org/maven2/dev/icerock/moko/moko-graphics) ![kotlin-version](https://img.shields.io/badge/kotlin-1.4.21-orange)
+[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Download](https://img.shields.io/maven-central/v/dev.icerock.moko/moko-graphics) ](https://repo1.maven.org/maven2/dev/icerock/moko/moko-graphics) ![kotlin-version](https://img.shields.io/badge/kotlin-1.4.31-orange)
 
 # Mobile Kotlin graphics
 This is a Kotlin Multiplatform library that provides graphics primitives to common code.  
