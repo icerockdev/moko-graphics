@@ -89,12 +89,12 @@ publishing {
 
         // Provide artifacts information requited by Maven Central
         pom {
-            name.set("MOKO parcelize")
-            description.set("@Parcelize support for android from common code in Kotlin Multiplatform")
-            url.set("https://github.com/icerockdev/moko-parcelize")
+            name.set("MOKO graphics")
+            description.set("Graphics primitives for mobile (android & ios) Kotlin Multiplatform development")
+            url.set("https://github.com/icerockdev/moko-graphics")
             licenses {
                 license {
-                    url.set("https://github.com/icerockdev/moko-parcelize/blob/master/LICENSE.md")
+                    url.set("https://github.com/icerockdev/moko-graphics/blob/master/LICENSE.md")
                 }
             }
 
@@ -112,9 +112,9 @@ publishing {
             }
 
             scm {
-                connection.set("scm:git:ssh://github.com/icerockdev/moko-parcelize.git")
-                developerConnection.set("scm:git:ssh://github.com/icerockdev/moko-parcelize.git")
-                url.set("https://github.com/icerockdev/moko-parcelize")
+                connection.set("scm:git:ssh://github.com/icerockdev/moko-graphics.git")
+                developerConnection.set("scm:git:ssh://github.com/icerockdev/moko-graphics.git")
+                url.set("https://github.com/icerockdev/moko-graphics")
             }
         }
     }
