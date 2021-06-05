@@ -1,0 +1,14 @@
+[versions]
+kotlinVersion = "1.5.10"
+androidAppCompatVersion = "1.2.0"
+androidAnnotationVersion = "1.1.0"
+mokoGraphicsVersion = "0.7.0"
+compileSdk = "28"
+targetSdk = "28"
+minSdk = "16"
+
+[libraries]
+appCompat = { module = "androidx.appcompat:appcompat", version.ref = "androidAppCompatVersion" }
+annotation = { module = "androidx.annotation:annotation", version.ref = "androidAppCompatVersion" }
+mokoGraphics = { module = "dev.icerock.moko:graphics", version.ref = "mokoGraphicsVersion" }
+
