@@ -25,7 +25,7 @@ kotlin {
     tvos()
     watchos()
     jvm()
-    js {
+    js(BOTH) {
         nodejs()
         browser()
     }
