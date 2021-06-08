@@ -1,5 +1,4 @@
 [versions]
-kotlinVersion = "1.5.10"
 androidAppCompatVersion = "1.2.0"
 androidAnnotationVersion = "1.1.0"
 mokoGraphicsVersion = "0.7.0"
