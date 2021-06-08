@@ -3,10 +3,10 @@
  */
 
 plugins {
-    plugin(Deps.Plugins.androidLibrary)
-    plugin(Deps.Plugins.kotlinMultiPlatform)
-    plugin(Deps.Plugins.mobileMultiPlatform)
-    plugin(Deps.Plugins.appleFramework)
+    id("com.android.library")
+    id("org.jetbrains.kotlin.multiplatform")
+    id("dev.icerock.mobile.multiplatform")
+    id("dev.icerock.mobile.multiplatform.apple-framework")
 }
 
 kotlin {
@@ -14,9 +14,6 @@ kotlin {
 }
 
 dependencies {
-    commonMainApi(Deps.Libs.MultiPlatform.mokoGraphics.common)
+    commonMainApi(projects.graphics)
 }
 
-framework {
-    export(Deps.Libs.MultiPlatform.mokoGraphics)
-}

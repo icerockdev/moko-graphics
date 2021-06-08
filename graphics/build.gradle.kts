@@ -6,18 +6,18 @@ import java.util.Base64
 import kotlin.text.String
 
 plugins {
-    plugin(Deps.Plugins.androidLibrary)
-    plugin(Deps.Plugins.kotlinMultiPlatform)
-    plugin(Deps.Plugins.mobileMultiPlatform)
-    plugin(Deps.Plugins.mavenPublish)
-    plugin(Deps.Plugins.signing)
+    id("com.android.library")
+    id("org.jetbrains.kotlin.multiplatform")
+    id("dev.icerock.mobile.multiplatform")
+    id("maven-publish")
+    id("signing")
 }
 
 group = "dev.icerock.moko"
-version = Deps.mokoGraphicsVersion
+version = libs.versions.mokoGraphicsVersion.get()
 
 dependencies {
-    androidMainImplementation(Deps.Libs.Android.annotation)
+    "androidMainImplementation"(libs.annotation)
 }
 
 kotlin {
