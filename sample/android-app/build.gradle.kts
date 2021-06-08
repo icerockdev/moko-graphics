@@ -3,20 +3,20 @@
  */
 
 plugins {
-    plugin(Deps.Plugins.androidApplication)
-    plugin(Deps.Plugins.kotlinAndroid)
+    id("com.android.application")
+    id("kotlin-android")
 }
 
 android {
-    compileSdkVersion(Deps.Android.compileSdk)
+    compileSdkVersion(libs.versions.compileSdk.get().toInt())
 
     dexOptions {
         javaMaxHeapSize = "2g"
     }
 
     defaultConfig {
-        minSdkVersion(Deps.Android.minSdk)
-        targetSdkVersion(Deps.Android.targetSdk)
+        minSdkVersion(libs.versions.minSdk.get().toInt())
+        targetSdkVersion(libs.versions.targetSdk.get().toInt())
 
         applicationId = "dev.icerock.moko.samples.graphics"
 
@@ -43,7 +43,7 @@ android {
 }
 
 dependencies {
-    implementation(Deps.Libs.Android.appCompat)
+    implementation(libs.appCompat)
 
-    implementation(project(":sample:mpp-library"))
+    implementation(projects.sample.mppLibrary)
 }
