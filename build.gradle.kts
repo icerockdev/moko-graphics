@@ -5,13 +5,6 @@ buildscript {
     repositories {
         mavenCentral()
         google()
-
-        jcenter {
-            content {
-                includeGroup("org.jetbrains.trove4j")
-            }
-        }
-
     }
     dependencies {
         classpath("dev.icerock:mobile-multiplatform:0.9.2")
@@ -24,12 +17,6 @@ allprojects {
     repositories {
         mavenCentral()
         google()
-
-        jcenter {
-            content {
-                includeGroup("org.jetbrains.trove4j")
-            }
-        }
     }
 
     plugins.withId("com.android.library") {
