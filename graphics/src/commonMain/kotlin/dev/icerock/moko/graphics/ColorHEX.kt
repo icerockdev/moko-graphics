@@ -4,8 +4,6 @@
 
 package dev.icerock.moko.graphics
 
-import java.lang.IllegalArgumentException
-
 fun Color.Companion.parseColor(colorHEX: String): Color {
     if (colorHEX[0] != '#') throw IllegalArgumentException("Unknown color")
     var ARGB = colorHEX.substring(1).toLong(16)
