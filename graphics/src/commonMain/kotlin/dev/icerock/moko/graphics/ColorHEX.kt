@@ -10,7 +10,7 @@ fun Color.Companion.parseColor(colorHEX: String): Color {
     if (colorHEX[0] != '#') throw IllegalArgumentException("Unknown color")
     var ARGB = colorHEX.substring(1).toLong(16)
     if (colorHEX.length == 7) {
-        ARGB = ARGB or -0x1000000 // Java 0x00000000ff000000
+        ARGB = ARGB or 0x00000000ff000000
     } else if (colorHEX.length != 9) {
         throw IllegalArgumentException("Unknown color")
     }
