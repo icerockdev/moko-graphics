@@ -5,28 +5,16 @@ buildscript {
     repositories {
         mavenCentral()
         google()
+        gradlePluginPortal()
     }
     dependencies {
-        classpath("dev.icerock:mobile-multiplatform:0.9.2")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10")
-        classpath("com.android.tools.build:gradle:4.2.1")
+        classpath(":graphics-build-logic")
     }
 }
 
 allprojects {
-    repositories {
-        mavenCentral()
-        google()
-    }
-
-    plugins.withId("com.android.library") {
-        configure<com.android.build.gradle.LibraryExtension> {
-            compileSdkVersion(libs.versions.compileSdk.get().toInt())
-
-            defaultConfig {
-                minSdkVersion(libs.versions.minSdk.get().toInt())
-                targetSdkVersion(libs.versions.targetSdk.get().toInt())
-            }
-        }
+    plugins.withId("org.gradle.maven-publish") {
+        group = "dev.icerock.moko"
+        version = libs.versions.mokoGraphicsVersion.get()
     }
 }

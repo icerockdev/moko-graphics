@@ -14,15 +14,15 @@ jobs:
         os: [macos-latest, windows-latest, ubuntu-latest]
     steps:
       - uses: actions/checkout@v1
-      - name: Set up JDK 1.8
+      - name: Set up JDK 11
         uses: actions/setup-java@v1
         with:
-          java-version: 1.8
+          java-version: 11
       - name: Check build
         run: ./gradlew build publishToMavenLocal
       - name: Install pods
         run: cd sample/ios-app && pod install
         if: matrix.os == 'macOS-latest'
       - name: Check iOS
-        run: cd sample/ios-app && xcodebuild -scheme TestProj -workspace TestProj.xcworkspace -configuration Debug build CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+        run: cd sample/ios-app && set -o pipefail && xcodebuild -scheme TestProj -workspace TestProj.xcworkspace -configuration Debug -sdk iphonesimulator -arch x86_64 build CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO | xcpretty
         if: matrix.os == 'macOS-latest'
