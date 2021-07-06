@@ -26,4 +26,6 @@ data class Color(
         blue = (colorRGBA.shr(8) and 0xFF).toInt(),
         alpha = (colorRGBA.shr(0) and 0xFF).toInt()
     )
+
+    companion object
 }

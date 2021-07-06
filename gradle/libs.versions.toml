@@ -1,10 +1,7 @@
 [versions]
 androidAppCompatVersion = "1.2.0"
 androidAnnotationVersion = "1.1.0"
-mokoGraphicsVersion = "0.7.0"
-compileSdk = "28"
-targetSdk = "28"
-minSdk = "16"
+mokoGraphicsVersion = "0.8.0"
 
 [libraries]
 appCompat = { module = "androidx.appcompat:appcompat", version.ref = "androidAppCompatVersion" }
