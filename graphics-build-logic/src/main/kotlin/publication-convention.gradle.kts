@@ -28,6 +28,8 @@ publishing {
             url.set("https://github.com/icerockdev/moko-graphics")
             licenses {
                 license {
+                    name.set("Apache-2.0")
+                    distribution.set("repo")
                     url.set("https://github.com/icerockdev/moko-graphics/blob/master/LICENSE.md")
                 }
             }
