@@ -1,5 +1,3 @@
-import gradle.kotlin.dsl.accessors._62b456da1d13c24405f15ede2977b266.sourceSets
-
 /*
  * Copyright 2021 IceRock MAG Inc. Use of this source code is governed by the Apache 2.0 license.
  */
