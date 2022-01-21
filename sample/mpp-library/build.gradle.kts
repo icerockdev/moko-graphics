@@ -14,7 +14,9 @@ plugins {
 kotlin {
     android()
     ios()
+    iosSimulatorArm64()
     macosX64()
+    macosArm64()
     targets.withType(org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget::class.java).all {
         binaries.withType(org.jetbrains.kotlin.gradle.plugin.mpp.Framework::class.java).all {
             export(projects.graphics)
