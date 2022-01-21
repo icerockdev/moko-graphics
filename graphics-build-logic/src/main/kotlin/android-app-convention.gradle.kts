@@ -9,10 +9,6 @@ plugins {
 }
 
 android {
-    dexOptions {
-        javaMaxHeapSize = "2g"
-    }
-
     buildTypes {
         getByName("release") {
             isMinifyEnabled = true
@@ -25,8 +21,8 @@ android {
     }
 
     packagingOptions {
-        exclude("META-INF/*.kotlin_module")
-        exclude("META-INF/AL2.0")
-        exclude("META-INF/LGPL2.1")
+        resources.excludes.add("META-INF/*.kotlin_module")
+        resources.excludes.add("META-INF/AL2.0")
+        resources.excludes.add("META-INF/LGPL2.1")
     }
 }

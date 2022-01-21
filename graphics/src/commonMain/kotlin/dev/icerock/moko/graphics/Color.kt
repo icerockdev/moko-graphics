@@ -10,16 +10,19 @@ data class Color(
     val blue: Int,
     val alpha: Int
 ) {
+    @Suppress("MagicNumber")
     val rgba: Long = alpha.toLong() or
-            blue.toLong().shl(8) or
-            green.toLong().shl(16) or
-            red.toLong().shl(24)
+        blue.toLong().shl(8) or
+        green.toLong().shl(16) or
+        red.toLong().shl(24)
 
+    @Suppress("MagicNumber")
     val argb: Long = blue.toLong() or
-            green.toLong().shl(8) or
-            red.toLong().shl(16) or
-            alpha.toLong().shl(24)
+        green.toLong().shl(8) or
+        red.toLong().shl(16) or
+        alpha.toLong().shl(24)
 
+    @Suppress("MagicNumber")
     constructor(colorRGBA: Long) : this(
         red = (colorRGBA.shr(24) and 0xFF).toInt(),
         green = (colorRGBA.shr(16) and 0xFF).toInt(),
