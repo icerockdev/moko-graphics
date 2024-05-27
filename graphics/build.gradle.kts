@@ -15,3 +15,7 @@ version = libs.versions.mokoGraphicsVersion.get()
 dependencies {
     androidMainImplementation(libs.annotation)
 }
+
+android {
+    namespace = "dev.icerock.moko.graphics"
+}
