@@ -11,6 +11,8 @@ dependencyResolutionManagement {
     }
 }
 
+rootProject.name = "moko-graphics"
+
 includeBuild("graphics-build-logic")
 
 include(":graphics")
