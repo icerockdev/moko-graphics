@@ -6,9 +6,10 @@ package dev.icerock.moko.graphics
 
 import platform.UIKit.UIColor
 
-@Suppress("unused")
 // Used in iOS targets
+@Suppress("unused")
 fun Color.toUIColor(): UIColor {
+    @Suppress("MagicNumber")
     val maxColorValue = 0xFF
     return UIColor(
         red = red.toDouble() / maxColorValue,
