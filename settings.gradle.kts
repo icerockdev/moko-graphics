@@ -2,7 +2,6 @@
  * Copyright 2019 IceRock MAG Inc. Use of this source code is governed by the Apache 2.0 license.
  */
 
-enableFeaturePreview("VERSION_CATALOGS")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 dependencyResolutionManagement {
@@ -11,6 +10,8 @@ dependencyResolutionManagement {
         google()
     }
 }
+
+rootProject.name = "moko-graphics"
 
 includeBuild("graphics-build-logic")
 

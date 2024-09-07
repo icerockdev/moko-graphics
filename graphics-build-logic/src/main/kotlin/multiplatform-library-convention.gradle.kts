@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
+
 /*
  * Copyright 2021 IceRock MAG Inc. Use of this source code is governed by the Apache 2.0 license.
  */
@@ -10,52 +12,33 @@ plugins {
 }
 
 kotlin {
-    android {
+    androidTarget {
         publishLibraryVariants("release", "debug")
     }
-    ios()
+    iosX64()
+    iosArm64()
     iosSimulatorArm64()
     macosX64()
     macosArm64()
-    tvos()
+    tvosX64()
+    tvosArm64()
     tvosSimulatorArm64()
-    watchos()
+    watchosX64()
+    watchosArm32()
+    watchosArm64()
     watchosSimulatorArm64()
     jvm()
-    js(BOTH) {
+    js(IR) {
         nodejs()
         browser()
     }
-    linux()
-    windows()
-    wasm32()
-
-    sourceSets {
-        val commonMain by getting
-
-        val iosMain by getting
-        val iosSimulatorArm64Main by getting
-        iosSimulatorArm64Main.dependsOn(iosMain)
-
-        val macosMain by creating
-        macosMain.dependsOn(commonMain)
-
-        val macosX64Main by getting
-        val macosArm64Main by getting
-        macosX64Main.dependsOn(macosMain)
-        macosArm64Main.dependsOn(macosMain)
-    }
-}
-
-fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.linux() {
     linuxArm64()
-    linuxArm32Hfp()
-    linuxMips32()
-    linuxMipsel32()
     linuxX64()
-}
-
-fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.windows() {
     mingwX64()
-    mingwX86()
+    @OptIn(ExperimentalWasmDsl::class)
+    wasmJs {
+        nodejs()
+        browser()
+    }
+    applyDefaultHierarchyTemplate()
 }

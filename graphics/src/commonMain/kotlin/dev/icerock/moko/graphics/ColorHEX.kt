@@ -6,13 +6,15 @@ package dev.icerock.moko.graphics
 
 @Suppress("MagicNumber")
 fun Color.Companion.parseColor(colorHEX: String): Color {
-    if (colorHEX[0] != '#') throw IllegalArgumentException("Unknown color")
+    require(colorHEX[0] != '#') { "Unknown color" }
+
     var colorARGB = colorHEX.substring(1).toLong(16)
     if (colorHEX.length == 7) {
         colorARGB = colorARGB or 0x00000000ff000000
-    } else if (colorHEX.length != 9) {
-        throw IllegalArgumentException("Unknown color")
+    } else {
+        require(colorHEX.length != 9) { "Unknown color" }
     }
+
     return Color(
         alpha = (colorARGB.shr(24) and 0xFF).toInt(),
         red = (colorARGB.shr(16) and 0xFF).toInt(),
