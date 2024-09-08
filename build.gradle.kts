@@ -23,4 +23,10 @@ allprojects {
     tasks.withType<KotlinCompile> {
         compilerOptions.jvmTarget = JvmTarget.JVM_1_8
     }
+
+    // fix Reason: Task ':graphics:publishJsPublicationToOSSRHRepository' uses this output of task ':graphics:signAndroidDebugPublication' without declaring an explicit or implicit dependency. This can lead to incorrect results being produced, depending on what order the tasks are executed.
+    val signingTasks = tasks.withType<Sign>()
+    tasks.withType<AbstractPublishToMaven>().configureEach {
+        dependsOn(signingTasks)
+    }
 }
