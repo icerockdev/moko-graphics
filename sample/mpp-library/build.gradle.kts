@@ -28,8 +28,7 @@ kotlin {
 dependencies {
     commonMainApi(projects.graphics)
 
-    commonTestImplementation(libs.moko.test.core)
-    commonTestImplementation(libs.moko.test.robolectric)
+    commonTestImplementation(libs.kotlin.test)
 }
 
 android {
