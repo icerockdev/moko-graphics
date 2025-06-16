@@ -1,10 +1,10 @@
 [versions]
 androidAppCompatVersion = "1.6.1"
 androidAnnotationVersion = "1.8.0"
-mokoGraphicsVersion = "0.10.0"
+mokoGraphicsVersion = "0.10.1"
 
 [libraries]
 appCompat = { module = "androidx.appcompat:appcompat", version.ref = "androidAppCompatVersion" }
 annotation = { module = "androidx.annotation:annotation", version.ref = "androidAnnotationVersion" }
 mokoGraphics = { module = "dev.icerock.moko:graphics", version.ref = "mokoGraphicsVersion" }
-
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test" }
