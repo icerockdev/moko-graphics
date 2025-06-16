@@ -1,10 +1,13 @@
 [versions]
 androidAppCompatVersion = "1.6.1"
 androidAnnotationVersion = "1.8.0"
-mokoGraphicsVersion = "0.10.0"
+mokoGraphicsVersion = "0.10.1"
+mokoTestVersion = "0.6.1"
 
 [libraries]
 appCompat = { module = "androidx.appcompat:appcompat", version.ref = "androidAppCompatVersion" }
 annotation = { module = "androidx.annotation:annotation", version.ref = "androidAnnotationVersion" }
 mokoGraphics = { module = "dev.icerock.moko:graphics", version.ref = "mokoGraphicsVersion" }
+moko-test-core = { module = "dev.icerock.moko:test-core", version.ref = "mokoTestVersion" }
+moko-test-robolectric = { module = "dev.icerock.moko:test-robolectric", version.ref = "mokoTestVersion" }
 

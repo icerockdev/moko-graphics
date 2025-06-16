@@ -36,7 +36,7 @@ allprojects {
 project build.gradle
 ```groovy
 dependencies {
-    commonMainApi("dev.icerock.moko:graphics:0.9.0")
+    commonMainApi("dev.icerock.moko:graphics:0.10.1")
 }
 ```
 

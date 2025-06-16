@@ -20,6 +20,8 @@ jobs:
           java-version: 17
       - name: Check build
         run: ./gradlew detektWithoutTests build publishToMavenLocal
+      - name: Check unit tests
+        run: ./gradlew test
       - name: Install pods
         run: cd sample/ios-app && pod install
         if: matrix.os == 'macOS-latest'
