@@ -27,6 +27,8 @@ kotlin {
 
 dependencies {
     commonMainApi(projects.graphics)
+
+    commonTestImplementation(libs.kotlin.test)
 }
 
 android {
