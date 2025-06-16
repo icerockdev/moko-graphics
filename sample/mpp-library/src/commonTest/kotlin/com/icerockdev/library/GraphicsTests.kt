@@ -47,15 +47,25 @@ class GraphicsTests {
 
     @Test
     fun parseWithoutPrefixTest() {
-        val colorFull = Color.parseColor("7788AAFF")
-        val colorAlphaShort = Color.parseColor("78AF")
+        val colorRGB = Color.parseColor("88AAFF")
+        val colorFull = Color.parseColor("FF88AAFF")
+        val colorRGBShort = Color.parseColor("8AF")
+        val colorAlphaShort = Color.parseColor("F8AF")
         assertEquals(
-            expected = colorAlphaShort.argb,
-            actual = 0x7788AAFF
+            expected = colorRGB.argb,
+            actual = 0xFF88AAFF
         )
         assertEquals(
             expected = colorFull.argb,
-            actual = 0x7788AAFF
+            actual = 0xFF88AAFF
+        )
+        assertEquals(
+            expected = colorRGBShort.argb,
+            actual = 0xFF88AAFF
+        )
+        assertEquals(
+            expected = colorAlphaShort.argb,
+            actual = 0xFF88AAFF
         )
     }
 }
