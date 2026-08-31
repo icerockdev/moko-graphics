@@ -4,7 +4,7 @@
 
 plugins {
     id("multiplatform-library-convention")
-    id("detekt-convention")
+    id("dev.icerock.moko.gradle.detekt")
     id("dev.icerock.mobile.multiplatform.android-manifest")
     id("dev.icerock.moko.gradle.publication")
 }
