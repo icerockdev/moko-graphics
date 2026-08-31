@@ -6,11 +6,8 @@ plugins {
     id("multiplatform-library-convention")
     id("detekt-convention")
     id("dev.icerock.mobile.multiplatform.android-manifest")
-    id("publication-convention")
+    id("dev.icerock.moko.gradle.publication")
 }
-
-group = "dev.icerock.moko"
-version = libs.versions.mokoGraphicsVersion.get()
 
 dependencies {
     androidMainImplementation(libs.annotation)
