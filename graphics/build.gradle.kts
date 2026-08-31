@@ -7,6 +7,7 @@ plugins {
     id("dev.icerock.moko.gradle.detekt")
     id("dev.icerock.mobile.multiplatform.android-manifest")
     id("dev.icerock.moko.gradle.publication")
+    id("dev.icerock.moko.gradle.stub.javadoc")
 }
 
 dependencies {
